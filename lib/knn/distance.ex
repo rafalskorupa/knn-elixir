@@ -8,4 +8,10 @@ defmodule Knn.Distance do
     |> Enum.sum()
     |> :math.sqrt()
   end
+
+  def hamming(a_list, b_list) do
+    Enum.zip(a_list, b_list)
+    |> Enum.filter(fn {a, b} -> a !== b end)
+    |> Enum.count()
+  end
 end
